@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WWWH Optical｜形だけで、ブランドだと分かる。</title>
+<meta name="description" content="WWWH Optical（ダブリュ・キューブド　オプチカル）は、東京のサングラスブランドです。ロゴではなく輪郭で覚えられるサングラスを、鯖江の手で仕上げています。">
+<meta name="theme-color" content="#000000">
+<style>
+  /* 外枠：どのPCでも本文は幅 10cm、両サイドは黒 */
+  html, body { margin: 0; height: 100%; background: #000; }
+  .stage { display: flex; justify-content: center; height: 100%; }
+  .stage iframe {
+    display: block; border: 0;
+    width: min(10cm, 100%);   /* 10cm より狭い画面では画面幅いっぱい */
+    height: 100%;
+    background: #e5e8e4;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <iframe id="site" src="site.html" title="WWWH Optical"></iframe>
+</div>
+<script>
+  /* ?edit=1 などの付加情報を本体ページへ引き継ぐ */
+  (function () {
+    var f = document.getElementById('site');
+    if (location.search || location.hash) f.src = 'site.html' + location.search + location.hash;
+  })();
+</script>
+</body>
+</html>
