@@ -348,3 +348,39 @@ body.is-editing [data-edit]:focus{outline:1.5px solid var(--demi);background:rgb
   .bar,.editor,.editor__hint,.lang{display:none !important;}
   body{background:#fff;}
 }
+
+/* =========================================================
+   15. PC frame — 左右 3cm の黒帯
+   html を黒、本文（main / footer）を紙色にして、
+   body の左右パディング部分を黒帯として見せる。
+   固定要素（ヘッダー等）も帯の内側に寄せる。
+   900px 未満では帯を出さない。
+   ========================================================= */
+:root{ --frame: 0px; }
+
+html{ background:#000; }
+
+@media (min-width: 900px){
+  :root{ --frame: 3cm; }
+}
+
+body{
+  padding-inline: var(--frame);
+  background: transparent;
+}
+
+main,
+footer{
+  background: var(--paper);
+}
+
+/* 固定要素は帯の内側に収める */
+.bar{ left:var(--frame); right:var(--frame); }
+.sheet{ left:var(--frame); right:var(--frame); }
+.editor{ left:var(--frame); right:var(--frame); }
+.editor__hint{ right:calc(var(--frame) + var(--pad)); }
+
+@media print{
+  html{ background:#fff; }
+  body{ padding-inline:0; }
+}

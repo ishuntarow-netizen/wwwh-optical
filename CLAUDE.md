@@ -60,6 +60,9 @@
   - 英語モード時は `html[lang="en"]` 配下で本文も欧文書体・欧文行間に切り替わる。
 - 余白：`.wrap { padding: 0 var(--pad) }`、`.section { padding-block: ... }`。
   **`padding` ショートハンドで左右を 0 に潰さない**（過去に事故あり）。
+- PCフレーム：`site.css` 末尾（章15）で、幅900px以上のとき左右に **3cm の黒帯**
+  （`--frame`）を出す。`html` が黒、`main` / `footer` が紙色。固定要素（`.bar` `.sheet`
+  `.editor`）も帯の内側に寄せている。**この帯を消さない**。印刷時は帯なし。
 - レスポンシブ：1000px / 640px の2ブレイクポイント。`prefers-reduced-motion` 対応済み。
 
 ## 4. テキストの持ち方（編集時に最重要）
